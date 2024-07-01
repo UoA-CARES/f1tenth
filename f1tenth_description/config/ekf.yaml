@@ -10,13 +10,19 @@ ekf_filter_node:
 # set to true, no 3D information will be used in your state estimate. Use this if you are operating in a planar
 # environment and want to ignore the effect of small variations in the ground plane that might otherwise be detected
 # by, for example, an IMU. Defaults to false if unspecified.
-        two_d_mode: false
+        two_d_mode: true
 
 # Whether to publish the acceleration state. Defaults to false if unspecified.
-        publish_acceleration: true
+        publish_acceleration: false
 
 # Whether to broadcast the transformation over the /tf topic. Defaultsto true if unspecified.
         publish_tf: true
+
+# x    , y     , z, 
+# roll , pitch , yaw, 
+# vx   , vy    , vz, 
+# vroll, vpitch, vyaw, 
+# ax   , ay    , az
 
 # 1. Set the map_frame, odom_frame, and base_link frames to the appropriate frame names for your system.
 #     1a. If your system does not have a map_frame, just remove it, and make sure "world_frame" is set to the value of odom_frame.
@@ -29,10 +35,12 @@ ekf_filter_node:
 #         from robot_localization! However, that instance should *not* fuse the global data.
         odom_frame: f1tenthodom            # Defaults to "odom" if unspecified
         base_link_frame: f1tenthbase_link  # Defaults to "base_link" ifunspecified
+        map_frame: map
 
         odom0: /f1tenth/odometry
-        odom0_config: [true,  true,  true,
-                       false, false, false,
-                       false, false, false,
+        odom0_config: [true,  true,  false,
                        false, false, true,
+                       false, false, false,
+                       false, false, false,
                        false, false, false]
+
