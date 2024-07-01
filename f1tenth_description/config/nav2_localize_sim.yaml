@@ -1,11 +1,11 @@
 amcl:
   ros__parameters:
     use_sim_time: True
-    alpha1: 0.2
-    alpha2: 0.2
-    alpha3: 0.2
-    alpha4: 0.2
-    alpha5: 0.2
+    alpha1: 0.0001 #0.2 Rotational noise due to rotational motion
+    alpha2: 0.0001 #0.2 Rotational noise due to translational motion
+    alpha3: 0.0001 #0.2 Translational noise due to translational motion
+    alpha4: 0.0001 #0.2 Translational noise due to rotational motion
+    alpha5: 0.0001 #0.2 Additional noise parameter for improved noise modeling
     base_frame_id: "f1tenthbase_link"
     beam_skip_distance: 0.5
     beam_skip_error_threshold: 0.9
@@ -14,10 +14,10 @@ amcl:
     global_frame_id: "map"
     lambda_short: 0.1
     laser_likelihood_max_dist: 2.0
-    laser_max_range: 100.0
+    laser_max_range: 5.6
     laser_min_range: -1.0
     laser_model_type: "likelihood_field"
-    max_beams: 60
+    max_beams: 682
     max_particles: 2000
     min_particles: 500
     odom_frame_id: "f1tenthodom"
