@@ -5,7 +5,7 @@
           <pose relative_to='hokuyo_10lx_lidar_link'>0 0 0 0 0 0</pose>
           <topic>${robot_name}/scan</topic>
           <gz_frame_id>${robot_name}hokuyo_10lx_lidar_link</gz_frame_id>
-          <update_rate>5</update_rate>
+          <update_rate>10</update_rate>
           <ray>
                 <scan>
                   <horizontal>
