@@ -33,7 +33,7 @@ joy_teleop:
           offset: 0.0
         drive-steering_angle:
           axis: 0
-          scale: 0.34
+          scale: 0.45
           offset: 0.0
     boost:
       type: topic
@@ -47,7 +47,7 @@ joy_teleop:
           offset: 0.0
         drive-steering_angle:
           axis: 0
-          scale: 0.34
+          scale: 0.45
           offset: 0.0
     autonomous_control:
       type: topic
