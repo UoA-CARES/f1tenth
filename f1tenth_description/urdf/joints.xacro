@@ -7,7 +7,7 @@
         <parent link="base_link" />
 
         <axis xyz="0 0 1" />
-        <limit lower="-0.6" upper="+0.6"
+        <limit lower="-0.7" upper="+0.7"
                velocity="3.66" effort="25" />
         <origin xyz="0.1575 0.1025 0.055" rpy="0 0 0"/>
     </joint>
@@ -17,7 +17,7 @@
         <parent link="base_link" />
 
         <axis xyz="0 0 1" />
-        <limit lower="-0.6" upper="+0.6"
+        <limit lower="-0.7" upper="+0.7"
                velocity="3.66" effort="25" />
         <origin xyz="0.1575 -0.1025 0.055" rpy="0 0 0"/>
     </joint>
