@@ -14,10 +14,10 @@
             <right_steering_joint>front_right_wheel_steering_joint</right_steering_joint>
 
             <kingpin_width>0.2050</kingpin_width>
-            <steering_limit>0.4347</steering_limit>
+            <steering_limit>0.4828</steering_limit>
             <!-- https://gazebosim.org/api/gazebo/6/classignition_1_1gazebo_1_1systems_1_1AckermannSteering.html-->
             <!-- SPECIAL ATTENTION TO STEERING LIMIT-->
-            <!-- USING TAN, check gz-sim source code, turn radius of ~0.7m -->
+            <!-- USING asin(0.325/0.7), check gz-sim source code, turn radius of ~0.7m -->
 
             <wheel_base>0.325</wheel_base>
             <!-- SHOULD BE MORE WHEEL SEPERATION I.E. TIRE CENTER-->
