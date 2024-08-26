@@ -16,7 +16,7 @@
     <xacro:property name="chassis_height" value="0.09" />
 
     <!-- Joint placement -->
-    <xacro:property name="chassis_to_wheel_x" value="${0.31 /2}" />
+    <xacro:property name="chassis_to_wheel_x" value="${0.325 /2}" />
     <xacro:property name="chassis_to_wheel_y" value="${0.005+ (wheel_width /2) + (chassis_width /2)}" />
     <xacro:property name="chassis_to_wheel_z" value="${wheel_diameter /2}" />
 

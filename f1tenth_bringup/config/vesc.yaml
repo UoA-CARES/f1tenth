@@ -34,8 +34,8 @@ vesc_to_odom_node:
     # publish odom to base link tf
     publish_tf: true
     use_servo_cmd_to_calc_angular_velocity: true
-    # car wheelbase is about 31.5cm
-    wheelbase: 0.315
+    # car wheelbase is about 32.5cm
+    wheelbase: 0.325
 
 # No longer needed, all parameters are shared
 # vesc_driver:
