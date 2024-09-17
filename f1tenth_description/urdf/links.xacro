@@ -1,7 +1,8 @@
 <?xml version='1.0'?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <link name="base_link" />
+    <link name="base_link">
+    </link>
 
     <!-- Wheels -->
     <xacro:cylinder_link name="front_left_wheel" mesh_file="package://f1tenth_description/meshes/wheel.stl"
@@ -46,10 +47,16 @@
     </xacro:box_link_nomesh >
 
     <!-- Sensor links -->
-
     <xacro:cylinder_link_nomesh name="hokuyo_10lx_lidar_link"
                     radius="0.05" width="0.08" mass="0.05">
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </xacro:cylinder_link_nomesh>
+
+
+    <link name="imu_sensor_link">
+        <gravity>false</gravity>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </link>
+        
 
 </robot>

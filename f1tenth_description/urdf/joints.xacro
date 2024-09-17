@@ -77,5 +77,11 @@
         <origin xyz="0.1 0 0.15" rpy="0 0 0"/>
     </joint>
 
+    <joint name="imu_sensor_joint" type="fixed">
+        <child link="imu_sensor_link"/>
+        <parent link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
 
 </robot>
