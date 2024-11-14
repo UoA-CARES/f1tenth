@@ -70,6 +70,7 @@ def spawn_func(context, *args, **kwargs):
                 # f'/model/{name}/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V',
                 f'/world/{world}/model/{name}/joint_state@sensor_msgs/msg/JointState@gz.msgs.Model',
                 f'/model/{name}/pose@geometry_msgs/msg/Pose@gz.msgs.Pose',
+                f'/{name}/imu@sensor_msgs/msg/Imu@gz.msgs.IMU'
 
             ],
             remappings=[
