@@ -96,6 +96,14 @@ def generate_launch_description():
 		parameters=[LaunchConfiguration('mux_config')],
 		remappings=[('ackermann_cmd_out', 'ackermann_cmd')]
 	)
+	# ekf_filter_node = Node(
+    #    package='robot_localization',
+    #    executable='ekf_node',
+    #    name='ekf_filter_node',
+    #    output='screen',
+    #    parameters=[os.path.join ( get_package_share_directory('f1tenth_bringup'), 'config', 'ekf_real.yaml')],
+	# #    remappings=[('odometry/filtered','f1tenth/odometry')]
+    # )
 
 	# finalize
 	# ld.add_action(joy_node)
@@ -104,6 +112,7 @@ def generate_launch_description():
 	ld.add_action(vesc_to_odom_node)
 	ld.add_action(vesc_driver_node)
 	ld.add_action(ackermann_mux_node)
+	# ld.add_action(ekf_filter_node)
 	ld.add_action(urg_node)
 
 	return ld

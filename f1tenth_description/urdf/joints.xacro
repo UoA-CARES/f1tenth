@@ -7,8 +7,8 @@
         <parent link="base_link" />
 
         <axis xyz="0 0 1" />
-        <limit lower="-0.6" upper="+0.6"
-               velocity="1.0" effort="25" />
+        <limit lower="-0.7" upper="+0.7"
+               velocity="3.66" effort="25" />
         <origin xyz="0.1575 0.1025 0.055" rpy="0 0 0"/>
     </joint>
 
@@ -17,8 +17,8 @@
         <parent link="base_link" />
 
         <axis xyz="0 0 1" />
-        <limit lower="-0.6" upper="+0.6"
-               velocity="1.0" effort="25" />
+        <limit lower="-0.7" upper="+0.7"
+               velocity="3.66" effort="25" />
         <origin xyz="0.1575 -0.1025 0.055" rpy="0 0 0"/>
     </joint>
 
@@ -75,6 +75,12 @@
         <parent link="base_link" />
 
         <origin xyz="0.1 0 0.15" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="imu_sensor_joint" type="fixed">
+        <child link="imu_sensor_link"/>
+        <parent link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
 
 
