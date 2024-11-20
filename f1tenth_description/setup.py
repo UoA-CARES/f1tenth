@@ -4,6 +4,10 @@ from setuptools import setup
 
 package_name = 'f1tenth_description'
 
+arucoFolders = glob('aruco_marker_models/*')
+aruco_markers = []
+for arucoFolder in arucoFolders:
+    aruco_markers.append((os.path.join('share', package_name, 'aruco_marker_models'), glob(f"{arucoFolder}/**/*.*", recursive=True)))
 setup(
     name=package_name,
     version='0.0.0',
@@ -20,6 +24,7 @@ setup(
         (os.path.join('share', package_name, 'worlds'), glob('worlds/*')),
         (os.path.join('share', package_name, 'config'), glob('config/*')),
         (os.path.join('share', package_name, 'sdf'), glob('sdf/*')),
+        *aruco_markers,
 
     ],
     install_requires=['setuptools'],
