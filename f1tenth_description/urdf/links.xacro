@@ -46,6 +46,12 @@
         <origin xyz="0 -0.0915 0" rpy="0 0 0"/>
     </xacro:box_link_nomesh >
 
+    <xacro:box_link name="aruco_visual" mesh_file="package://f1tenth_description/meshes/aruco.stl"
+                    x="0.03" y="0.183" z="0.31 " mass="0.08">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:box_link>
+
+
     <!-- Sensor links -->
     <xacro:cylinder_link_nomesh name="hokuyo_10lx_lidar_link"
                     radius="0.05" width="0.08" mass="0.05">
@@ -57,6 +63,7 @@
         <gravity>false</gravity>
         <origin xyz="0 0 0" rpy="0 0 0"/>
     </link>
-        
+
+    
 
 </robot>
