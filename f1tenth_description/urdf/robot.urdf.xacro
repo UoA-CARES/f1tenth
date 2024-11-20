@@ -1,5 +1,6 @@
 <?xml version='1.0'?>
 <robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- <xacro:include filename="$(find f1tenth_description)/urdf/robot.gazebo.xacro"/> -->
 
     <!-- Contestants and stuff -->
     <xacro:include filename="$(find f1tenth_description)/urdf/const.xacro" />

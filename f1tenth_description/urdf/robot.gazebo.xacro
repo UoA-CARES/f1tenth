@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot name="robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <gazebo reference="lower_chassis">
+        <material>ArucoVisualMarker0/Marker</material>
+    </gazebo> 
+
+</robot>
