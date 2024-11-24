@@ -51,10 +51,9 @@
         <origin xyz="0 0 0" rpy="0 0 0"/>
     </xacro:box_link>
 
-    <xacro:box_link name="camera_visual" mesh_file="package://f1tenth_description/meshes/camera.stl"
-                    x="0" y="0" z="0" mass="0.08">
+    <xacro:box_link_nomesh name="camera_visual" x="0.05" y="0.2" z="0.3" mass="0.08">
         <origin xyz="0 0 0" rpy="0 0 0"/>
-    </xacro:box_link>
+    </xacro:box_link_nomesh>
 
 
     <!-- Sensor links -->
