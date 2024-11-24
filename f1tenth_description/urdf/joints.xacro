@@ -80,7 +80,7 @@
         <child link="camera_visual" />
         <parent link="base_link" />
 
-        <origin xyz="0.5 0 0" rpy="0 0 0"/>
+        <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
     </joint>
 
     <!-- Sensor Joints -->
