@@ -6,6 +6,7 @@
     <xacro:include filename="$(find f1tenth_description)/urdf/macro.xacro" />
     <xacro:include filename="$(find f1tenth_description)/gazebo/lidar.gazebo.xacro" />
     <xacro:include filename="$(find f1tenth_description)/gazebo/imu.gazebo.xacro" />
+    <xacro:include filename="$(find f1tenth_description)/gazebo/camera.gazebo.xacro" />
 
     <!-- links and joints -->
     <xacro:include filename="$(find f1tenth_description)/urdf/links.xacro" />
