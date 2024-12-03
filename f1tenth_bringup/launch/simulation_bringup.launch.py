@@ -66,6 +66,7 @@ def spawn_func(context, *args, **kwargs):
                 f'/model/{name}/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
                 f'/{name}/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan',
                 f'/{name}/camera@sensor_msgs/msg/Image@gz.msgs.Image',
+                f'/{name}/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo',
                 f'/model/{name}/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry',
                 f'/model/{name}/odometry_with_covariance@nav_msgs/msg/Odometry@gz.msgs.OdometryWithCovariance',
                 # f'/model/{name}/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V',
