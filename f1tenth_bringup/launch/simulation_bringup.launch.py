@@ -1,20 +1,19 @@
 import os
 
+import xacro
 from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
 from launch.actions import (
-    ExecuteProcess,
     DeclareLaunchArgument,
-    OpaqueFunction,
+    ExecuteProcess,
     IncludeLaunchDescription,
+    OpaqueFunction,
     SetEnvironmentVariable,
 )
-from launch_ros.descriptions import ParameterValue
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
-
-import xacro
+from launch_ros.descriptions import ParameterValue
 
 
 # xacro.process_file(xacro_file, mappings={"robot_name": {name}}).toxml()
@@ -27,6 +26,7 @@ def spawn_func(context, *args, **kwargs):
 
     world = LaunchConfiguration("world").perform(context)
     name = LaunchConfiguration("name").perform(context)
+    enable_camera = LaunchConfiguration("enable_camera").perform(context)
 
     x = LaunchConfiguration("x").perform(context)
     y = LaunchConfiguration("y").perform(context)
@@ -44,7 +44,11 @@ def spawn_func(context, *args, **kwargs):
             parameters=[
                 {
                     "robot_description": xacro.process_file(
-                        xacro_file, mappings={"robot_name": name}
+                        xacro_file,
+                        mappings={
+                            "robot_name": name,
+                            "enable_camera": enable_camera,
+                        },
                     ).toxml(),
                     "frame_prefix": name,
                 }
@@ -131,6 +135,12 @@ def generate_launch_description():
 
     name_arg = DeclareLaunchArgument(name="name", description="name of robot spawned")
 
+    enable_camera = DeclareLaunchArgument(
+        name="enable_camera",
+        description="enable depth camera sensor",
+        default_value="false",
+    )
+
     x = DeclareLaunchArgument(
         name="x", description="x position of robot", default_value="3.0"
     )
@@ -154,5 +164,16 @@ def generate_launch_description():
     Y = DeclareLaunchArgument(name="Y", description="yaw of robot", default_value="0.0")
 
     return LaunchDescription(
-        [world_arg, name_arg, x, y, z, R, P, Y, OpaqueFunction(function=spawn_func)]
+        [
+            world_arg,
+            name_arg,
+            enable_camera,
+            x,
+            y,
+            z,
+            R,
+            P,
+            Y,
+            OpaqueFunction(function=spawn_func),
+        ]
     )
