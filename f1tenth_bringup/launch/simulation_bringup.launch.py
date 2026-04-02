@@ -51,6 +51,8 @@ def spawn_func(context, *args, **kwargs):
                         },
                     ).toxml(),
                     "frame_prefix": name,
+                    "use_sim_time": True,
+                    "ignore_timestamp": True,
                 }
             ],
             remappings=[
