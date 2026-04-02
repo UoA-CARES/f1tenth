@@ -2,14 +2,13 @@
 <robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <xacro:arg name="enable_camera" default="false" />
-    <xacro:property name="enable_camera_flag" value="$(arg enable_camera)" />
 
     <!-- Contestants and stuff -->
     <xacro:include filename="$(find f1tenth_description)/urdf/const.xacro" />
     <xacro:include filename="$(find f1tenth_description)/urdf/macro.xacro" />
     <xacro:include filename="$(find f1tenth_description)/gazebo/lidar.gazebo.xacro" />
     <xacro:include filename="$(find f1tenth_description)/gazebo/imu.gazebo.xacro" />
-    <xacro:if value="${enable_camera_flag == 'true'}">
+    <xacro:if value="$(arg enable_camera)">
         <xacro:include filename="$(find f1tenth_description)/gazebo/camera.gazebo.xacro" />
     </xacro:if>
 
